@@ -1,0 +1,70 @@
+/*
+HERANÇA:
+   1. Sobreposição / Sobrescreve
+	2. Aplica a último estilo definido
+	3. Prioriza estilo específicas (com seletores mais próximos)
+	4. Se aplica a todas as propriedades
+
+COMBINADORES:
+	(espaço) seletor descendente 
+	(>) combinador de seletores filhos
+	(+) combinador de elementos irmãos adjacentes / que vem logo na sequencia
+	(~) combinador de elementos irmãos geral / após elemento de referência
+
+BORDAS:
+   padding: 1em;           <!-- Aplica-se à todas as bordas -->
+   padding: 5% 10%;        <!-- vertical | horizontal -->
+   padding: 1em 2em 2em;   <!-- Top | horizontal | Bottom -->
+   padding: 2px 1em 0 1em; <!-- Top | Left | Bottom | Right -->
+
+border-width: thin medium thick 10px; <!-- Top | Right | Bottom | Left -->
+   top border is thin     <!-- borda TOP fina -->
+   right border is medium <!-- borda RIGHT média -->
+   bottom border is thick <!-- borda BOTTOM grossa -->
+   left border is 10px    <!-- borda LEFT 10px -->
+*/
+/*
+DISPLAY
+   display:         flex   <!-- atribuído apenas ao elemento PAI -->
+   align-items:     center <!-- alinhamento vertical eixo Y -->
+   justify-content: center <!-- alinhamento horizontal eixo X -->
+*/
+table {
+	border-collapse: collapse;
+	background: #ffffff;
+	width: 100%;
+}
+table thead { /* definindo rótulo da tabela */
+	background-color: #2d73b9;
+	border-top: 1px solid #00b5ef;
+	border-bottom: 1px solid #00b5ef;
+	font-weight: bold;
+}
+table thead tr:nth-child(even) { /* 2ª linha (cabeçaçho) */
+	background-color: #d4ecfb;
+}
+table tbody tr:nth-child(even) { /* tabela zebrada (corpo) */
+	background-color: #d4ecfb;
+}
+table tbody tr:hover { /* destacar linha ao passar mouse */
+	background-color: rgba(255, 255, 0, .2);
+}
+table th, table td {
+	padding: .3rem;
+	text-align: center;
+	vertical-align: middle;
+	color: #252525;
+	border-top: 1px solid #00b5ef;
+	border-bottom: 1px solid #00b5ef;
+	border-right: 1px solid #00b5ef;
+}
+table tr td:first-child { /* primeiro coluna (corpo) */
+	text-align: center;
+	font-weight: bold;
+}
+table tr td:last-child { /* última linha da direita da tabela */
+	border-right: 1px none #fff;
+}
+table th {
+	color: #ffffff;
+}

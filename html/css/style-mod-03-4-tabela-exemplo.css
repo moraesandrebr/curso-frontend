@@ -1,0 +1,349 @@
+/*
+HERANÇA:
+   1. Sobreposição / Sobrescreve
+	2. Aplica a último estilo definido
+	3. Prioriza estilo específicas (com seletores mais próximos)
+	4. Se aplica a todas as propriedades
+
+COMBINADORES:
+	(espaço) seletor descendente 
+	(>) combinador de seletores filhos
+	(+) combinador de elementos irmãos adjacentes / que vem logo na sequencia
+	(~) combinador de elementos irmãos geral / após elemento de referência
+
+BORDAS:
+   padding: 1em;           <!-- Aplica-se à todas as bordas -->
+   padding: 5% 10%;        <!-- vertical | horizontal -->
+   padding: 1em 2em 2em;   <!-- Top | horizontal | Bottom -->
+   padding: 2px 1em 0 1em; <!-- Top | Left | Bottom | Right -->
+
+border-width: thin medium thick 10px; <!-- Top | Right | Bottom | Left -->
+   top border is thin     <!-- borda TOP fina -->
+   right border is medium <!-- borda RIGHT média -->
+   bottom border is thick <!-- borda BOTTOM grossa -->
+   left border is 10px    <!-- borda LEFT 10px -->
+*/
+/*
+DISPLAY
+   display:         flex   <!-- atribuído apenas ao elemento PAI -->
+   align-items:     center <!-- alinhamento vertical eixo Y -->
+   justify-content: center <!-- alinhamento horizontal eixo X -->
+*/
+/*====================*/
+/*====================*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, b, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+/*====================*/
+/*====================*/
+*, *::before, *::after { /* *, *::before, *::after { */
+   box-sizing: border-box;
+}
+
+html {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 62.5%; /* equivalente a 10px */
+}
+/*====================*/
+h1 {
+   padding: 1rem 0rem .5rem 0rem;
+   font-size: 2rem;
+}
+h2 {
+   padding: 1rem 0rem .5rem 0rem;
+   font-size: 1.6rem;
+}
+h3, h4, h5, h6 {
+   padding: 1rem 0rem .5rem 0rem;
+   font-size: 1.4rem;
+}
+p {
+   padding: .5rem 0rem .5rem 0rem;
+   font-size: 1.2rem;
+}
+a {
+   text-decoration: none;
+   color: #191919;
+   font-size: 1.2rem;
+}
+/*====================*/
+body {
+   width: 100%;
+   font-size: 1em;
+   line-height: 1.3;
+   text-align: justify;
+   color: #191919;
+   background-color: #f3f2ef;
+}
+/*============= HEADER =============
+====================================*/
+.header {
+   width: 100%;
+   height: auto;
+   position: fixed;
+   background-color: #ffffff;
+   padding: 5px 10px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+#header-menu {
+   display: flex;
+}
+#header-menu li {
+   margin-left: 10px;
+   font-weight: bold;
+}
+#header-menu li a {
+   padding: 5px;
+   display: block;
+   color: #b87333;
+}
+.filtro-header {
+   filter: grayscale(100%);
+}
+.filtro-header:hover {
+   filter:  grayscale(0%);
+}
+/*============== MAIN ==============
+====================================*/
+.container-main {
+   margin-top: 50px;
+   padding-top: 40px;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   float: left;
+   flex-wrap: wrap;
+}
+/*======== COLUNA ESQUERDA ========
+====================================*/
+.coluna-esquerda {
+   display: block;
+   width: 180px;
+   float: left;
+   flex-wrap: wrap;
+}
+.coluna-esquerda-itens {
+   background-color: #ffffff;
+   margin: 0em 0em .8em 0em; /*Top-Left-Bottom-Right*/
+   border: .9px solid #b6b4b3;
+   border-top-left-radius: .9em;
+   border-top-right-radius: .9em;
+}
+.linha-nav {
+   display: flex;
+   width: 100%;
+   margin: 0;
+   height: 4em;
+   align-items: center;
+}
+.linha-nav:hover {
+   background-color: #f3f2ef;
+}
+.classe-navegacao li:hover {
+   color: #0a66c2;
+}
+.coluna-esquerda li a {
+   width: 00%;
+   padding: 1em;
+   padding-right: 4em;
+}
+.coluna-esquerda li a:hover {
+   color: #0a66c2;
+   background-color: #f3f2ef;
+}
+.coluna-esquerda #link-aulas {
+   height: 20.9em;
+}
+.coluna-esquerda #link-contatos {
+   padding-top: 5px;
+   height: 13.4em;
+}
+.coluna-esquerda h2 {
+   color: #0a66c2;
+   padding-left: 1em;
+   padding-bottom: 1em;
+}
+/*========= COLUNA CENTRAL =========
+====================================*/
+.coluna-central-itens {
+   background-color: #ffffff;
+   margin: 0em 1em 1em 1em; /*Top-Left-Bottom-Right*/
+   border: .9px solid #b6b4b3;
+   border-top-left-radius: .9em;
+   border-top-right-radius: .9em;
+   padding: 0em 1.4em 0em 1.4em; /*Top-Left-Bottom-Right*/
+}
+.coluna-central {
+   display: block;
+   width: 432px;
+   padding: 0em 1.4em 1em 1.4em; /*Top-Left-Bottom-Right*/
+   float: left;
+   flex-wrap: wrap;
+}
+#link-central-1 {
+   padding-top: 5px;
+   height: 70px;
+}
+#link-central-2 {
+   padding-top: 5px;
+   min-height: 650px;
+}
+#link-central-1 h2 {
+   text-align: center;
+}
+/*======== COLUNA DIREITA ========
+====================================*/
+.coluna-direita {
+   display: block;
+   width: 300px;
+   float: left;
+   flex-wrap: wrap;
+}
+.coluna-direita-itens {
+   background-color: #ffffff;
+   margin: 0em 0em .8em 0em; /*Top-Left-Bottom-Right*/
+   border: .9px solid #b6b4b3;
+   border-top-left-radius: .9em;
+   border-top-right-radius: .9em;
+   padding: 0em 1.4em 0em 1.4em; /*Top-Left-Bottom-Right*/   
+}
+.coluna-direita #link-info-complementar {
+   padding-top: 5px;
+   height: 32em;
+}
+.coluna-direita-map {
+   padding-top: 10px;
+   height: 300px;
+   align-items: center; /* alinhamento vertical eixo Y */
+   justify-content: center; /* alinhamento horizontal eixo X */
+}
+.coluna-direita-map #link-map {
+   width: 100%;
+   height: 270px;
+}
+.coluna-direita-yt {
+   padding-top: 10px;
+   height: 32.5em;
+   align-items: center; /* alinhamento vertical eixo Y */
+   justify-content: center; /* alinhamento horizontal eixo X */
+}
+.coluna-direita-yt #link-video-yt {
+   width: 100%;
+   height: 151px;
+}
+.coluna-direita-yt #link-site-yt {
+   text-align: left;
+}
+.coluna-direita li {
+   padding: 0 1em;
+}
+.coluna-direita a {
+   color: #191919;
+}
+.coluna-direita a:hover {
+   color: #0a66c2;
+   text-decoration: underline;
+}
+.coluna-direita h2 {
+   color: #0a66c2;
+}
+/*============= RODAPÉ =============
+====================================*/
+.rodape p {
+   width: 100%;
+   height: auto;
+   background-color: #bfd3d6;
+   color: #b87333;
+   padding: .8em;
+   text-align: center;
+   font-size: 1.1em;
+   float: left;
+}
+.rodape a:hover {
+   color: #0a66c2;
+}
+/*========== MEDIA QUERY ==========
+====================================*/
+
+/* Layout responsivo - faz as duas colunas/caixas empilharem uma sobre a outra ao invés de uma ao lado da outra */
+/* Desktop: 1024x800px / Tablet: 768x1024px / Smartphone: 320x480px */
+/* Laptop */
+@media (max-width: 769) {
+   .coluna-esquerda, .coluna-direita, .coluna-central {
+      width: 100%;
+      height: auto;
+   }
+   .container-main {
+      width: 100%;
+      height: 100%;
+      display: flex;
+   }
+   .coluna-esquerda {
+      display: block;
+      width: 180px;
+   }
+}
+/* Tablet */
+@media (max-width: 768px) and (min-width: 376px) {
+   .coluna-esquerda, .coluna-direita, .coluna-central {
+      width: 100%;
+      height: auto;
+   }
+   .coluna-esquerda {
+      display: flex;
+      width: 180px;
+      float: left;
+      flex-wrap: wrap;
+   }
+   .coluna-esquerda-itens {
+      display: flex;
+      float: left;
+      width: 180px;
+   }
+}
+/* Smartphone */
+@media (max-width: 375px) {
+   .coluna-esquerda, .coluna-direita, .coluna-central {
+      width: 100%;
+      height: auto;
+   }
+   .body {
+      min-width: 320px;
+   }
+}
